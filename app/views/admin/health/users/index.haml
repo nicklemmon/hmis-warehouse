@@ -39,7 +39,7 @@
                       - Role.health.each do |role|
                         - id = "users[#{user.id}]roles[#{role.id}]"
                         - name = "users[#{user.id}]roles[]"
-                        %span.checkbox
+                        %span.checkbox.mr-3
                           %label{for: id}
                             = check_box_tag(id, 1, user.roles.where(name: role.name).any?, id: id, class: "check_boxes optional")
                             = role.name

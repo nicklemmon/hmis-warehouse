@@ -3,7 +3,7 @@
 
 .o-page__controls
   .o-page__search
-    = render 'search_form', tooltip: 'Search with PersonalID or full or partial "first last" or "last, first" for more specific results', data: {placement: 'bottom'}
+    = render 'search_form', tooltip: 'Search with Personal ID or full or partial "first last" or "last, first" for more specific results','aria_label':'Patient Search', data: {placement: 'bottom'}
   .o-page__filter
     = render 'filter'
   .o-page__link.ml-auto

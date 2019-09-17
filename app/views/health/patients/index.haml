@@ -17,7 +17,7 @@
 
 .d-flex
   .search
-    = render 'search_form', tooltip: 'Search with PersonalID or full or partial "first last" or "last, first" for more specific results', data: {placement: 'bottom'}
+    = render 'search_form', tooltip: 'Search with Personal ID or full or partial "first last" or "last, first" for more specific results','aria_label':'Patient Search', data: {placement: 'bottom'}
   .filter.ml-4
     = render 'filter'
 
