@@ -133,7 +133,9 @@ gem 'redis-rails'
 
 #AWS SDK
 gem 'aws-sdk-rails'
-gem 'aws-sdk', '~> 3'
+gem 'aws-sdk-ses', '~> 1'
+gem 'aws-sdk-rds', '~> 1'
+gem 'aws-sdk-s3', '~> 1'
 gem 'json'
 gem 'awesome_print'
 
