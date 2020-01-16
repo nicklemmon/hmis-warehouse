@@ -10,7 +10,7 @@ metadata:
   # Namespace the ALB Ingress Controller should run in. Does not impact which
   # namespaces it's able to resolve ingress resource for. For limiting ingress
   # namespace scope, see --watch-namespace.
-  namespace: kube-system
+  namespace: ${NAMESPACE}
 spec:
   selector:
     matchLabels:
@@ -36,7 +36,7 @@ spec:
             # Name of your cluster. Used when naming resources created
             # by the ALB Ingress Controller, providing distinction between
             # clusters.
-            # - --cluster-name=devCluster
+            - --cluster-name=openpath
 
             # AWS VPC ID this ingress controller will use to create AWS resources.
             # If unspecified, it will be discovered from ec2metadata.
@@ -45,7 +45,7 @@ spec:
             # AWS region this ingress controller will operate in.
             # If unspecified, it will be discovered from ec2metadata.
             # List of regions: http://docs.aws.amazon.com/general/latest/gr/rande.html#vpc_region
-            # - --aws-region=us-west-1
+            - --aws-region=us-east-1
 
             # Enables logging on all outbound requests sent to the AWS API.
             # If logging is desired, set to true.
