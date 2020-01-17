@@ -5,7 +5,7 @@ ENV RAILS_LOG_TO_STDOUT=true \
 
 ARG BUILDER
 
-LABEL "host.openpath.app"=warehouse
+LABEL "host.openpath.app"=open-path-warehouse
 LABEL "host.openpath.role"=web
 LABEL "host.openpath.ruby-version"=2.6.5
 

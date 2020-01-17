@@ -1,21 +1,25 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: "2048-deployment"
-  namespace: "2048-game"
+  name: "warehouse-web-deployment"
+  namespace: ${NAMESPACE}
 spec:
   selector:
     matchLabels:
-      app: "2048"
-  replicas: 5
+      app: "warehouse-web"
+  replicas: 2
   template:
     metadata:
       labels:
-        app: "2048"
+        app: "warehouse-web"
     spec:
       containers:
-      - image: alexwhen/docker-2048
-        imagePullPolicy: Always
-        name: "2048"
-        ports:
-        - containerPort: 80
+        - image: ${IMAGE}
+          imagePullPolicy: Always
+          name: "warehouse-web"
+          ports:
+            - containerPort: 80
+          env: &env
+            - name: TEST2
+              value: yippie
