@@ -50,7 +50,11 @@ config/letsencrypt_plugin.yml
 app/mail_interceptors/sandbox_email_interceptor.rb
 node_modules
 *.swp
+
+# docker deployment
 docker/deploy/REVISION
+docker/deploy/*.env
+docker/deploy/secrets.yml
 
 # Environment normalization:
 /vendor/bundle

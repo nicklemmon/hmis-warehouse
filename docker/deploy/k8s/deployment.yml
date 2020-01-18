@@ -23,3 +23,6 @@ spec:
           env: &env
             - name: TEST2
               value: yippie
+          envFrom:
+            - secretRef:
+                name: ${NAMESPACE}-env
