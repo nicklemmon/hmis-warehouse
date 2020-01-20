@@ -56,6 +56,7 @@ docker/deploy/REVISION
 docker/deploy/*.env
 docker/deploy/secrets.yml
 docker/deploy/.version
+docker/deploy/metrics-server*
 
 # Environment normalization:
 /vendor/bundle
