@@ -8,7 +8,7 @@ spec:
   selector:
     matchLabels:
       app: "warehouse-web"
-  replicas: 2
+  replicas: 1
   template:
     metadata:
       labels:
@@ -20,9 +20,9 @@ spec:
           name: "warehouse-web"
           ports:
             - containerPort: 80
-          env: &env
-            - name: TEST2
-              value: yippie
+          env:
+            - name: TESTNAME
+              value: TESTVALUE
           envFrom:
             - secretRef:
                 name: ${NAMESPACE}-env
