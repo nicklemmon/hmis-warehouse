@@ -23,12 +23,15 @@ File.open(filename) do |f|
       key = line[0..delimit_offset-1]
       val = line[delimit_offset+1..-1].chomp
 
-      if val.length == 0
-        val = "''"
+      if val[0] == "'" && val[-1] == "'"
+        val = val[1..-2]
       end
 
       encoded_val = Base64.strict_encode64(val)
-      puts "  #{key}: #{encoded_val}"
+
+      if encoded_val != ''
+        puts "  #{key}: #{encoded_val}"
+      end
     end
   end
 end
