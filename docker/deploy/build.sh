@@ -6,18 +6,20 @@ echo Building deployable image
 
 git rev-parse HEAD > REVISION
 
+#WIP check for uncommited files.
+
 docker build \
   --file=./Dockerfile \
   --tag open-path-warehouse:latest \
-  ../..
+  ../.. || exit
 
 echo log in to ECR: Elastic Container Registry
 $(aws ecr get-login --no-include-email --region us-east-1)
 
-export REGISTRY_ID=`aws ecr describe-repositories | jq '.repositories[0].registryId' | sed -e 's/"//g'`
-export REPO=$REGISTRY_ID.dkr.ecr.us-east-1.amazonaws.com/open-path-warehouse
-export IMAGE=${REPO}:${VERSION}
-echo using $IMAGE as the destination
+#export REGISTRY_ID=`aws ecr describe-repositories | jq '.repositories[0].registryId' | sed -e 's/"//g'`
+#export REPO=$REGISTRY_ID.dkr.ecr.us-east-1.amazonaws.com/open-path-warehouse
+#export IMAGE=${REPO}:${VERSION}
+#echo using $IMAGE as the destination
 
 echo tagging this last build
 docker tag open-path-warehouse:latest $IMAGE
