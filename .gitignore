@@ -55,6 +55,7 @@ node_modules
 docker/deploy/REVISION
 docker/deploy/*.env
 docker/deploy/secrets.yml
+docker/deploy/.version
 
 # Environment normalization:
 /vendor/bundle
