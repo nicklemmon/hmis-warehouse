@@ -1,3 +1,4 @@
+# See what port got mapped:
 # docker-compose port rails 3000
 #
 version: '3.4'
@@ -41,12 +42,8 @@ services:
   runner:
     <<: *backend
     command: /bin/bash
-
-  #ssh_runner:
-  #  <<: *backend
-  #  command: /bin/bash
-  #  #secrets:
-  #  #  - host_ssh_key
+    #secrets:
+    #  - host_ssh_key
 
   rails:
     <<: *backend
@@ -56,8 +53,6 @@ services:
     command: 'bundle exec rails server -b 0.0.0.0'
     ports:
       - '3000'
-    #expose:
-    #  - '3000:3000'
     environment:
       <<: *env
       VIRTUAL_HOST: hmis-warehouse.dev.test
@@ -71,7 +66,6 @@ volumes:
   bundle:
   node_modules:
   rails_cache:
-
 
 #networks:
 #  default:
