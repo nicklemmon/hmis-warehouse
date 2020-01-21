@@ -40,26 +40,26 @@ services:
   ssh_runner:
     <<: *backend
     command: /bin/bash
-    secrets:
-      - host_ssh_key
+    #secrets:
+    #  - host_ssh_key
 
   rails:
     <<: *backend
     stdin_open: true
     tty: true
     command: bundle exec rails server -b 0.0.0.0
-    # ports:
-    #   - '3000:3000'
-    expose:
-      - 3000
+    ports:
+      - '3000'
+    #expose:
+    #  - '3000:3000'
     environment:
       <<: *env
       VIRTUAL_HOST: hmis-warehouse.dev.test
       VIRTUAL_PORT: 3000
 
-secrets:
-  host_ssh_key:
-    file: ~/.ssh/id_rsa
+#secrets:
+#  host_ssh_key:
+#    file: ~/.ssh/id_rsa
 
 volumes:
   bundle:

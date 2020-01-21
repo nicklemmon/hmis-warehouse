@@ -84,7 +84,7 @@ RUN gem update --system \
     && gem install bundler:$BUNDLER_VERSION \
     && bundle
 
-RUN mkdir ~/.ssh && ln -s /run/secrets/host_ssh_key ~/.ssh/id_rsa
+#RUN mkdir ~/.ssh && ln -s /run/secrets/host_ssh_key ~/.ssh/id_rsa
 
 COPY docker/entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
