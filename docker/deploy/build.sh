@@ -1,5 +1,7 @@
 #!/bin/bash
 
+./set_version.sh
+
 export AWS_PROFILE=openpath
 
 echo Building deployable image
