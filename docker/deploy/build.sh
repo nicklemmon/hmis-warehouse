@@ -7,6 +7,7 @@ set -e
 
 if [[ `git status --porcelain` != '' ]]; then
   echo Aborting since git is not clean
+  exit 1
 fi
 
 export AWS_PROFILE=openpath
@@ -22,7 +23,8 @@ docker build \
   --tag open-path-warehouse:latest \
   ../..
 
-#echo log in to ECR: Elastic Container Registry
+# Log in to ECR: Elastic Container Registry
+# This lets you push using docker directly if you need that
 #$(aws ecr get-login --no-include-email --region us-east-1)
 
 echo tagging this last build
