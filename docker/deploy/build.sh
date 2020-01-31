@@ -5,8 +5,9 @@ set -e
 
 ./set_version.sh
 
-
-echo WIP: abort if git not clean
+if [[ `git status --porcelain` != '' ]]; then
+  echo Aborting since git is not clean
+fi
 
 export AWS_PROFILE=openpath
 
